@@ -11,7 +11,7 @@ Include Irvine32.inc
 .model flat,stdcall
 .stack 4096
 ExitProcess proto,dwExitCode:dword
-
+; include mouse.inc 
 
 .data
      bill DWORD 0
@@ -32,7 +32,7 @@ ExitProcess proto,dwExitCode:dword
              BYTE '      Enter 2 - Roti   =   Rs 05',0dh,0ah
              BYTE '      Enter 3 - Exit ',0dh,0ah,0
 
-    buffer3 DWORD 10,05
+    buffer3 DWORD 10,05 ;Naan aur roti ki price
 
     string4  BYTE '      Enter 1 - Chicken Briyani  =  Rs 100 per plate',0dh,0ah
              BYTE '      Enter 2 - Chicken Karahi   =  Rs 90 per plate',0dh,0ah
@@ -40,7 +40,7 @@ ExitProcess proto,dwExitCode:dword
              BYTE '      Enter 4 - Murgh Haleem     =  Rs 85 per plate',0dh,0ah
              BYTE '      Enter 5 - Exit ',0dh,0ah,0
 
-    buffer4 DWORD 100,90,70,85
+    buffer4 DWORD 100,90,70,85 ; array containing price of biryani, karahi etc
 
     string5  BYTE '      Enter 1 - Egg Fried Rice               =  Rs 150 per plate ',0dh,0ah
              BYTE '      Enter 2 - Chicken Manchurian with rice =  Rs 165 per plate ',0dh,0ah
@@ -86,6 +86,8 @@ ExitProcess proto,dwExitCode:dword
 
 .code
 main proc
+
+    ; invoke main1
      call Crlf
      call Crlf
     mov edx,OFFSET string
